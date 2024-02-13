@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    box-sizing: border-box;
+    display: flex;
+    width: 100vw;
+    padding: 40px 50px;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    color: #333;
+}
+nav ul li a:hover {
+    background-color: violet;
+}
+
+main.flex-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px 50px;
+}
+main.flex-container figure {
+    width: 45%;
+    min-width: 400px;
+    position: relative;
+}
+
+main.flex-container figure img{
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+main.flex-container figure figcaption{
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    padding: 50px;
+    visibility: hidden;
+}
+
+main.flex-container figure:hover figcaption{
+    visibility: visible;
+}
+
+main.flex-container .spring figcaption{
+    background-color: yellow;
+}
+
+main .summer figcaption{
+    background-color: skyblue;
+}
+
+main .fall figcaption{
+    background-color: brown;
+    color: azure;
+}
+
+main .winter figcaption{
+    background-color: white;
+}
+
+/* About-page */
+
+.About-main{
+    width: 100vw;
+}
+
+.About-figure{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
+    gap: 50px;
+}
+
+.About-figure img{
+    width: 25%;
+    min-width: 300px;
+    min-height: auto;
+}
+
+.About-figure figcaption {
+    width: 70%;
+    min-width: 500px;
+}
+
+.About-figure figcaption p{
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.About-figure figcaption h2{
+    color: #111;
+    font-size: 2rem;
+}
+
+
