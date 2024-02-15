@@ -35,7 +35,7 @@ nav ul li a:hover {
 main.flex-container {
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 50px 50px;
 }
@@ -94,7 +94,8 @@ main .winter figcaption{
 .About-figure{
     box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     width: 100%;
     padding: 0 50px;
     gap: 50px;
@@ -102,13 +103,32 @@ main .winter figcaption{
 
 .About-figure img{
     width: 25%;
-    min-width: 300px;
-    min-height: auto;
 }
+
+.About-figure img:nth-child(1){
+    display: block;
+}
+.About-figure img:nth-child(2){
+    display: none;
+    width: 0;
+}
+
+@media screen and (max-width: 1099px){
+    .About-figure img:nth-child(1){
+        display: none;
+        width: 0;
+    }
+    .About-figure img:nth-child(2){
+        display: block;
+        width: 25%;
+        min-width: 250px;
+    }
+} 
+    
 
 .About-figure figcaption {
     width: 70%;
-    min-width: 500px;
+    min-width: 400px;
 }
 
 .About-figure figcaption p{
