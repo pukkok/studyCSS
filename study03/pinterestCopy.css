@@ -1,0 +1,326 @@
+:root{
+    --header-height : 100px;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+/* header 영역 */
+
+header{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    padding-bottom: 1rem;
+}
+
+header .logoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logoBox img{
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+header .logoBox h1 {
+    margin-right: 1rem;
+}
+header .logoBox h2 {
+    font-size: 1rem;
+}
+
+header nav ul{
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li{
+    padding: 1rem;
+}
+
+/* main 영역 */
+
+main{
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 2rem 0;
+    position: relative;
+}
+
+main .textBox{
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+main .textBox h2{
+    font-size: 3.5rem;
+}
+
+main .textBox span{
+    display: none;
+    animation: Off 1s linear forwards;
+}
+main .textBox span.on{
+    animation: On 1s linear forwards;
+    display: inline;
+}
+main .textBox span.blue{
+    color: blue;
+
+}
+main .textBox span.red{
+    color: red;
+}
+main .textBox span.yellow{
+    color: yellow;
+}
+
+main .colorBox{
+    box-sizing: border-box;
+    padding: 10% 5rem;
+    display: grid;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.2rem;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+main .colorBox .colorCard{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    opacity: 0;
+    border-radius: 15px;
+}
+
+.on{
+    opacity: 0;
+    animation: On 1s forwards;
+}
+
+/* .second, .third{
+    visibility: hidden;
+} */
+
+main .colorBox.on .colorCard.line1{
+    top: 0;
+    animation: fadeInUp0 1s forwards;
+}
+main .colorBox.on .colorCard.line2{
+    top: 30%;
+    animation: fadeInUp30 1s forwards;
+    animation-delay: .3s;
+}
+main .colorBox.on .colorCard.line3{
+    top: 50%;
+    animation: fadeInUp50 1s forwards;
+    animation-delay: .6s;
+}
+main .colorBox.on .colorCard.line4{
+    top: 70%;
+    animation: fadeInUp70 1s forwards;
+    animation-delay: .9s;
+}
+main .colorBox.on .colorCard.line5{
+    top: 50%;
+    animation: fadeInUp50 1s forwards;
+    animation-delay: 1.2s;
+}
+main .colorBox.on .colorCard.line6{
+    top: 30%;
+    animation: fadeInUp30 1s forwards;
+    animation-delay: 1.5s;
+}
+main .colorBox.on .colorCard.line7{
+    top: 0;
+    animation: fadeInUp0 1s forwards;
+    animation-delay: 1.8s;
+}
+
+
+
+/* test */
+main .colorBox.off .colorCard{
+    opacity: 1;
+}
+main .colorBox.off .colorCard.line1{
+    top: 0;
+    animation: fadeOutUp0 1s forwards;
+}
+main .colorBox.off .colorCard.line2{
+    top: 30%;
+    animation: fadeOutUp30 1s forwards;
+    animation-delay: .3s;
+}
+main .colorBox.off .colorCard.line3{
+    top: 50%;
+    animation: fadeOutUp50 1s forwards;
+    animation-delay: .6s;
+}
+main .colorBox.off .colorCard.line4{
+    top: 70%;
+    animation: fadeOutUp70 1s forwards;
+    animation-delay: .9s;
+}
+main .colorBox.off .colorCard.line5{
+    top: 50%;
+    animation: fadeOutUp50 1s forwards;
+    animation-delay: 1.2s;
+}
+main .colorBox.off .colorCard.line6{
+    top: 30%;
+    animation: fadeOutUp30 1s forwards;
+    animation-delay: 1.5s;
+}
+main .colorBox.off .colorCard.line7{
+    top: 0;
+    animation: fadeOutUp0 1s forwards;
+    animation-delay: 1.8s;
+}
+
+/* keyframes */
+@keyframes fadeInUp0 {
+    0%{
+        top: 10%;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp30 {
+    0%{
+        top: 40%;
+        opacity: 0;
+    }
+    100%{
+        top: 30%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp50 {
+    0%{
+        top: 60%;
+        opacity: 0;
+    }
+    100%{
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp70 {
+    0%{
+        top: 80%;
+        opacity: 0;
+    }
+    100%{
+        top: 70%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutUp0 {
+    0%{
+        top: 0;
+        opacity: 1;
+    }
+    100%{
+        top: -10%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp30 {
+    0%{
+        top: 30%;
+        opacity: 1;
+    }
+    100%{
+        top: 20%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp50 {
+    0%{
+        top: 50%;
+        opacity: 1;
+    }
+    100%{
+        top: 40%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp70 {
+    0%{
+        top: 70%;
+        opacity: 1;
+    }
+    100%{
+        top: 60%;
+        opacity: 0;
+    }
+}
+
+@keyframes On {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes Off {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/* .first{
+    animation-name: Off, On;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+    animation-delay: 5s, 15s;
+    animation-duration: 1s, 1s;
+}
+.second{    
+    animation-name: Off, On;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+    animation-delay: 0s, 5s;
+    animation-duration: 1s, 1s;
+}
+.third{
+    visibility: hidden;
+    display: none;
+} */
