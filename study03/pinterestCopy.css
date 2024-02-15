@@ -1,0 +1,305 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 2rem;
+}
+header .logoBox {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+header .logoBox h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+header .logoBox p {
+    margin: 0;
+}
+
+header .logoBox img {
+    width: 50px;
+    height: 50px;
+    padding-right: 0.5rem;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    padding: 1rem;
+}
+
+/* 메인 시작 */
+
+main {
+    width: 100vw;
+}
+
+main .textBox {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    position: relative;
+}
+main .textBox h2 span{
+    opacity: 0;
+    display: none;
+}
+
+main .textBox h2 span.blue {
+    color: blue;
+}
+main .textBox h2 span.red {
+    color: red;
+}
+main .textBox h2 span.yellow {
+    color: yellow;
+}
+
+main .textBox h2 span.on{
+    display: inline;
+    animation: playon 1s linear forwards;
+}
+main .textBox h2 span.off{
+    /* display: none; */
+    animation: playoff 1s linear forwards;
+}
+main
+
+.colorBox {
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    padding: 3rem 3rem 0 ;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    position: relative;
+    top: -150px;
+    margin-bottom: 20px;
+    gap: 1rem;
+}
+
+.colorBox .smallBox {
+    width: 200px;
+    height: 300px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+    opacity: 0;
+}
+
+.t0{
+    animation: fadeinUp0 1s forwards ;
+}
+
+.t30{
+    animation: fadeinUp30 1s forwards;
+}
+
+.t60{
+    animation: fadeinUp60 1s forwards;
+}
+.delay1{
+    animation-delay: .3s;
+}
+.delay2{
+    animation-delay: .6s;
+}
+.delay3{
+    animation-delay: .9s;
+}
+.delay4{
+    animation-delay: 1.2s;
+}
+.delay5{
+    animation-delay: 1.5s;
+}
+.delay6{
+    animation-delay: 1.8s;
+}
+/* colorBox blue */
+.colorBox.blue .smallBox:nth-child(1) {
+    background-color: #0000ff;
+}
+.colorBox.blue .smallBox:nth-child(2) {
+    background-color: #0040ff;
+}
+.colorBox.blue .smallBox:nth-child(3) {
+    background-color: #006aff;
+    grid-column: 3 / 5;
+}
+.colorBox.blue .smallBox:nth-child(4) {
+    background-color: #0095ff;
+}
+.colorBox.blue .smallBox:nth-child(5) {
+    background-color: #00aaff;
+}
+.colorBox.blue .smallBox:nth-child(6) {
+    background-color: #00bfff;
+}
+.colorBox.blue .smallBox:nth-child(7) {
+    background-color: #00d5ff;
+}
+.colorBox.blue .smallBox:nth-child(8) {
+    background-color: #00ffff;
+}
+.colorBox.blue .smallBox:nth-child(9) {
+    background-color: #0099cc;
+}
+.colorBox.blue .smallBox:nth-child(10) {
+    background-color: #bfe4ff;
+}
+.colorBox.blue .smallBox:nth-child(11) {
+    background-color: #99bfcc;
+}
+.colorBox.blue .smallBox:nth-child(12) {
+    background-color: #39bae5;
+}
+.colorBox.blue .smallBox:nth-child(13) {
+    background-color: #66b2cc;
+}
+/* colorBox red */
+.colorBox.red .smallBox:nth-child(1) {
+    background-color: #ffa07a;
+}
+.colorBox.red .smallBox:nth-child(2) {
+    background-color: #fa8072;
+}
+.colorBox.red .smallBox:nth-child(3) {
+    background-color: #e9967a;
+    grid-column: 3 / 5;
+}
+.colorBox.red .smallBox:nth-child(4) {
+    background-color: #f08080;
+}
+.colorBox.red .smallBox:nth-child(5) {
+    background-color: #cd5c5c;
+}
+.colorBox.red .smallBox:nth-child(6) {
+    background-color: #dc143c;
+}
+.colorBox.red .smallBox:nth-child(7) {
+    background-color: #b22222;
+}
+.colorBox.red .smallBox:nth-child(8) {
+    background-color: #ff0000;
+}
+.colorBox.red .smallBox:nth-child(9) {
+    background-color: #8b0000;
+}
+.colorBox.red .smallBox:nth-child(10) {
+    background-color: #d1180b;
+}
+.colorBox.red .smallBox:nth-child(11) {
+    background-color: #ff0044;
+}
+.colorBox.red .smallBox:nth-child(12) {
+    background-color: #ff0088;
+}
+.colorBox.red .smallBox:nth-child(13) {
+    background-color: #ff4400;
+}
+/* colorBox yellow */
+.colorBox.yellow .smallBox:nth-child(1) {
+    background-color: #d2b48c;
+}
+.colorBox.yellow .smallBox:nth-child(2) {
+    background-color: #ffdab9;
+}
+.colorBox.yellow .smallBox:nth-child(3) {
+    background-color: #bdb76b;
+    grid-column: 3 / 5;
+}
+.colorBox.yellow .smallBox:nth-child(4) {
+    background-color: #ffe4b5;
+}
+.colorBox.yellow .smallBox:nth-child(5) {
+    background-color: #ffdead;
+}
+.colorBox.yellow .smallBox:nth-child(6) {
+    background-color: #f0e68c;
+}
+.colorBox.yellow .smallBox:nth-child(7) {
+    background-color: #deb887;
+}
+.colorBox.yellow .smallBox:nth-child(8) {
+    background-color: #b8860b;
+}
+.colorBox.yellow .smallBox:nth-child(9) {
+    background-color: #daa520;
+}
+.colorBox.yellow .smallBox:nth-child(10) {
+    background-color: #ffd700;
+}
+.colorBox.yellow .smallBox:nth-child(11) {
+    background-color: #ffff00;
+}
+.colorBox.yellow .smallBox:nth-child(12) {
+    background-color: #fafad2;
+}
+.colorBox.yellow .smallBox:nth-child(13) {
+    background-color: #eee8aa;
+}
+
+@keyframes fadeinUp0 {
+    0%{
+        top: 5%;
+        opacity: 0;
+    }
+    100%{
+        top: 0%;
+        opacity: 1;
+    }
+}
+@keyframes fadeinUp30 {
+    0%{
+        top: 35%;
+        opacity: 0;
+    }
+    100%{
+        top: 30%;
+        opacity: 1;
+    }
+}
+@keyframes fadeinUp60 {
+    0%{
+        top: 65%;
+        opacity: 0;
+    }
+    100%{
+        top: 60%;
+        opacity: 1;
+    }
+}
+
+@keyframes playoff {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes playon {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

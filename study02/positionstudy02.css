@@ -1,0 +1,192 @@
+:root{
+    --header-height: 70px;
+    --primary-color: violet;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+}
+header, footer{
+    height: var(--header-height);
+    flex: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+/* 헤더영역 */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+}
+
+header > a{
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    gap: 10px;
+}
+
+header > a:hover{
+    color: var(--primary-color);
+}
+
+header img{
+    width: 50px;
+    height: 50px;
+}
+
+header > nav > ul{
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin-right: 2rem;
+}
+
+header > nav > ul > li{
+    position: relative;
+    /* display: flex;
+    flex-direction: column; */
+}
+header > nav > ul > li:hover::before{
+    width: 100%;
+}
+header > nav > ul > li::before{
+    position: absolute;
+    bottom: -5px;
+    content: '';
+    width: 0;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    transition: .3s;
+}
+
+header > nav > ul > li > ul{
+    display: none;
+}
+
+header > nav > ul > li:hover > ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 250%;
+    background-color: azure;
+    padding: .5rem;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    margin-top: var(--header-height);
+}
+main aside{
+    width: 300px;
+    flex: none;
+}
+
+main section{
+    flex: 1;
+}
+main section .slider{
+    width: 90%;
+    height: 700px;
+    margin: 2rem auto;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+}
+main section .slider::-webkit-scrollbar{
+    height: 8px;
+}
+main section .slider::-webkit-scrollbar-thumb{
+    height: 30%;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+main section .slider::-webkit-scrollbar-track{
+    background-color: rgba(235, 185, 93, .3);
+}
+main section .slider .slide{
+    width: 100%;
+    height: 100%;
+    flex: none ;
+    scroll-snap-align: start;
+}
+main section .slider .slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-position: center; */
+}
+
+/* 사이드바 영역 */
+main aside nav{
+    background-color: var(--primary-color);
+    position: sticky;
+    top: var(--header-height);
+}
+main aside nav ul{
+    list-style: none;
+    padding: .5rem;
+    margin: 2rem;
+}
+main aside nav ul li a{
+    color: #fff;
+}
+
+/* 푸터영역 */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+footer .rights{
+    font-weight: 400;
+    margin-top: .5rem;
+}
+footer .icons{
+    font-size: 1.5rem;
+}
+footer .icons i{
+    margin-right: .5rem;
+    transition: .3s;
+}
+footer .icons i:hover{
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+body > span{
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    z-index: 1;
+    cursor: pointer;
+    transition: .3s;
+}
+body > span:hover{
+    transform: translateY(-10px);
+}

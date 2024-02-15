@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+nav{
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    border-right: 1px solid rgb(221, 221, 221);
+    padding: 2rem;
+    z-index: 1;
+}
+nav h1{
+    font-size: 2rem;
+    padding: 2rem 0;
+}
+
+nav ul li{
+    width: 100%;
+    list-style: none;
+    padding: .8rem 0;
+    align-content: center;
+}
+nav ul li:hover{
+    background-color: #dddddd;
+    border-radius: 10px;
+}
+
+nav ul li a{
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a span{
+    padding-right: 1rem;
+    font-size: 2rem !important;
+}
+
+main {
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+    width: calc(100% - 250px);
+    padding-top: 2rem;
+    margin-left: 250px;
+}
+
+main header, main section{
+    margin: 0 auto;
+    width: 55%;
+    min-width: 800px;
+}
+
+main header .profile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+main header .profile .imgbox{
+    width: 20%;
+    margin-right: 3%;
+}
+main header .profile img{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile .textbox{
+    width: 60%;
+}
+
+.profile .textbox h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-right: 1rem;
+}
+.profile .textbox h3{
+    font-size: 1rem;
+    padding-right: 2rem;
+    font-weight: 400;
+}
+
+.box1, .box2, .box3{
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+.box1{
+    gap: .5rem;
+}
+.box1 button{
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.box1 button:hover{
+    background-color: #d3d3d3;
+}
+.box1 p{
+    font-size: 1.8rem;
+}
+.box3{
+    display: block;
+}
+
+.box3 p{
+    font-size: .8rem;
+    margin-bottom: 1rem;
+}
+
+main header .story{
+    display: flex;
+    width: 100%;
+    padding-left: 3%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    gap: 5%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+main header .story img{
+    border: solid 1px grey;
+    padding: 2%;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+}
+
+section {
+    width: 100%;
+    border-top: 1px solid rgb(221, 221, 221);;
+    border-collapse: collapse;
+}
+section .contentbox {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+}
+section .contentbox p{
+    padding: 1rem .2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+}
+section .contentbox p:nth-child(1){
+    border-top: 1px solid #333;
+}
+
+section .figurebox{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    overflow: hidden;
+    gap: .5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+section .figurebox figure{
+    width: 100%;
+    position: relative;    
+}
+
+section .figurebox figure .cover{
+    position: relative;
+    top: 0;
+}
+
+section .figurebox figure:hover .cover{
+    filter: brightness(0.5);
+}
+section .figurebox img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+}
+section .figurebox figure figcaption{
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 20px;
+}
+
+section .figurebox figure:hover figcaption{
+    display: flex;
+    justify-content: center;
+}
+
+/* section .figurebox img:hover figcaption{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), black;
+} */

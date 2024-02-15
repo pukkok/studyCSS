@@ -1,0 +1,32 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://www.yachtandboat.com/wp-content/uploads/2018/12/hero-image-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+}
+.container{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.container section{
+    width: 100vw;
+    height: 30rem;
+    border-bottom: 1px solid #ccc;
+    z-index: 1;
+    text-align: center;
+    font-size: 10rem;
+    font-weight: bold;
+}
+.container section:not(.contact){
+    background-color: #333;
+    color: #fff;
+    mix-blend-mode: overlay;
+}

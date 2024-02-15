@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid template</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas: 
+            "header header header"
+            "a main b"
+            ". . ."
+            "footer footer footer";
+        }
+        .item{
+            height: 200px;
+            background-color: violet;
+            margin: 5px;
+        }
+        .item:nth-child(1){
+            grid-area: header;
+        }
+        .item:nth-child(2){
+            grid-area: a;
+        }
+        .item:nth-child(3){
+            grid-area: main;
+        }
+        .item:nth-child(4){
+            grid-area: b;
+        }
+        .item:nth-child(5){
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">header</div>
+        <div class="item">side a</div>
+        <div class="item">main</div>
+        <div class="item">side b</div>
+        <div class="item">footer</div>
+    </div>
+</body>
+</html>

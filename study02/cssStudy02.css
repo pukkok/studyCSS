@@ -1,0 +1,70 @@
+.track{
+    border: 2px solid #ccc;
+    border-radius: 50%;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.track.earth{
+    width: 400px;
+    height: 400px;
+    animation: spin 7000ms linear infinite;
+}
+.track.venus{
+    width: 300px;
+    height: 300px;
+    animation: spin 6000ms linear infinite;
+}
+.track.mercury{
+    width: 200px;
+    height: 200px;
+    animation: spin 5000ms linear infinite;
+}
+.sun{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.track::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+}
+
+.track.earth::before{
+    width: 30px;
+    height: 30px;
+    background-color: green;
+}
+
+.track.venus::before{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+}
+.track.mercury::before{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+}
+
+@keyframes spin {
+    0%{
+        transform : translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+        transform : translate(-50%, -50%) rotate(360deg);
+    }
+}

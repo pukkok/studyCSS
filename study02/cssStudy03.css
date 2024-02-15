@@ -1,0 +1,29 @@
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu{
+    width: 20rem;
+    background-color: #eee;
+    padding: .5rem;
+    z-index: 1;
+    box-shadow: .3rem .3rem .3rem rgba(0,0,0,.3);
+    display: none;
+}
+.nav-menu:focus + .dropdown-menu{
+    display: block;
+}
+.dropdown-menu a{
+    display: block;
+    transform: .3s;
+}
+.dropdown-menu a:hover{
+    background-color: #ccc;
+}
+.dropdown-menu a i{
+    margin-right: 1rem;
+}
+.dropdown-menu:active{
+    display: block;
+}

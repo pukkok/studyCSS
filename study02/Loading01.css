@@ -1,0 +1,36 @@
+:root{
+    --primary-color: orange;
+}
+
+.loading{
+    width: 200px;
+    height: 200px;
+    border: 15px dotted var(--primary-color);
+    border-radius: 50%;
+    border-top: 15px dotted transparent;
+    border-right: 17px dotted var(--primary-color);
+    border-bottom: 20px dotted var(--primary-color);
+    border-left: 30px dotted var(--primary-color);
+    animation: spin 1500ms ease-in infinite;
+}
+
+h3{
+    margin: 0;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+@keyframes spin{
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

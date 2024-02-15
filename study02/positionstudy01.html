@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .container {
+                background-color: #ccc;
+                width: 50vw;
+                height: 50vh;
+            }
+            .container .static,
+            .relative {
+                width: 200px;
+                height: 200px;
+            }
+            .container .static {
+                background-color: yellowgreen;
+                z-index: 2;
+                position: relative;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .container .relative {
+                background-color: skyblue;
+                position: relative;
+                top: -100px;
+                left: 100px;
+                z-index: 3;
+            }
+            body {
+                height: 200vh;
+            }
+            /* container2 */
+            .container2 {
+                background-color: #333;
+                color: #fff;
+                /* position: sticky;
+                top: 100px;
+                margin-top: 300px; */
+            }
+            .container2 .absolute,
+            .container2 .static {
+                width: 200px;
+                height: 200px;
+            }
+            .container2 .static {
+                background-color: aqua;
+            }
+            .container2 .absolute {
+                background-color: orange;
+                position: sticky;
+                top: 0;
+            }
+            .container2 .absolute .box {
+                width: 50px;
+                height: 50px;
+                background-color: royalblue;
+                position: fixed;
+                bottom: 100px;
+                right: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="static">static</div>
+            <div class="relative">relative</div>
+        </div>
+        <div class="container2">
+            <h1>포지션 실습: absolute</h1>
+            <div class="static"></div>
+            <div class="absolute">
+                <div class="box"></div>
+            </div>
+            <h2>absolute로 움직이는 요소 1</h2>
+            <p>absolute로 움직이는 요소 2</p>
+        </div>
+    </body>
+</html>
