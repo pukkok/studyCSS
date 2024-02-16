@@ -15,15 +15,24 @@ h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
 
+h2{
+    font-size: 3.5rem;
+}
+
 /* header 영역 */
 
 header{
+    position: fixed;
+    background-color: white;
+    width: 100vw;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: var(--header-height);
+    padding: 0 2vw;
     padding-bottom: 1rem;
+    z-index: 1;
 }
 
 header .logoBox{
@@ -55,45 +64,63 @@ header nav ul li{
     padding: 1rem;
 }
 
-/* main 영역 */
+/* main section1 영역 */
+
+main{
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+section{
+    scroll-snap-align: end;
+    width: 100vw;
+    padding-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+}
 
 main{
     box-sizing: border-box;
     width: 100vw;
-    padding: 2rem 0;
     position: relative;
 }
 
-main .textBox{
+.section1{
+    /* margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height)); */
+    /* box-sizing: border-box; */
+    position: relative;
+}
+
+.section1 .textBox{
     width: 100%;
     text-align: center;
     position: relative;
+    top: 5%;
 }
 
-main .textBox h2{
+.section1 .textBox h2{
     font-size: 3.5rem;
 }
 
-main .textBox span{
+.section1 .textBox span{
     display: none;
     animation: Off 1s linear forwards;
 }
-main .textBox span.on{
+.section1 .textBox span.on{
     animation: On 1s linear forwards;
     display: inline;
 }
-main .textBox span.blue{
+.section1 .textBox span.blue{
     color: blue;
-
 }
-main .textBox span.red{
+.section1 .textBox span.red{
     color: red;
 }
-main .textBox span.yellow{
+.section1 .textBox span.yellow{
     color: yellow;
 }
 
-main .colorBox{
+.section1 .colorBox{
     box-sizing: border-box;
     padding: 10% 5rem;
     display: grid;
@@ -102,11 +129,11 @@ main .colorBox{
     grid-template-columns: repeat(7,1fr);
     gap: 1.2rem;
     position: absolute;
-    top: 0;
+    top: var(--header-height);
     overflow: hidden;
 }
 
-main .colorBox .colorCard{
+.section1 .colorBox .colorCard{
     width: 100%;
     height: 250px;
     position: relative;
@@ -123,36 +150,36 @@ main .colorBox .colorCard{
     visibility: hidden;
 } */
 
-main .colorBox.on .colorCard.line1{
+.section1 .colorBox.on .colorCard.line1{
     top: 0;
     animation: fadeInUp0 1s forwards;
 }
-main .colorBox.on .colorCard.line2{
+.section1 .colorBox.on .colorCard.line2{
     top: 30%;
     animation: fadeInUp30 1s forwards;
     animation-delay: .3s;
 }
-main .colorBox.on .colorCard.line3{
+.section1 .colorBox.on .colorCard.line3{
     top: 50%;
     animation: fadeInUp50 1s forwards;
     animation-delay: .6s;
 }
-main .colorBox.on .colorCard.line4{
+.section1 .colorBox.on .colorCard.line4{
     top: 70%;
     animation: fadeInUp70 1s forwards;
     animation-delay: .9s;
 }
-main .colorBox.on .colorCard.line5{
+.section1 .colorBox.on .colorCard.line5{
     top: 50%;
     animation: fadeInUp50 1s forwards;
     animation-delay: 1.2s;
 }
-main .colorBox.on .colorCard.line6{
+.section1 .colorBox.on .colorCard.line6{
     top: 30%;
     animation: fadeInUp30 1s forwards;
     animation-delay: 1.5s;
 }
-main .colorBox.on .colorCard.line7{
+.section1 .colorBox.on .colorCard.line7{
     top: 0;
     animation: fadeInUp0 1s forwards;
     animation-delay: 1.8s;
@@ -161,39 +188,39 @@ main .colorBox.on .colorCard.line7{
 
 
 /* test */
-main .colorBox.off .colorCard{
+.section1 .colorBox.off .colorCard{
     opacity: 1;
 }
-main .colorBox.off .colorCard.line1{
+.section1 .colorBox.off .colorCard.line1{
     top: 0;
     animation: fadeOutUp0 1s forwards;
 }
-main .colorBox.off .colorCard.line2{
+.section1 .colorBox.off .colorCard.line2{
     top: 30%;
     animation: fadeOutUp30 1s forwards;
     animation-delay: .3s;
 }
-main .colorBox.off .colorCard.line3{
+.section1 .colorBox.off .colorCard.line3{
     top: 50%;
     animation: fadeOutUp50 1s forwards;
     animation-delay: .6s;
 }
-main .colorBox.off .colorCard.line4{
+.section1 .colorBox.off .colorCard.line4{
     top: 70%;
     animation: fadeOutUp70 1s forwards;
     animation-delay: .9s;
 }
-main .colorBox.off .colorCard.line5{
+.section1 .colorBox.off .colorCard.line5{
     top: 50%;
     animation: fadeOutUp50 1s forwards;
     animation-delay: 1.2s;
 }
-main .colorBox.off .colorCard.line6{
+.section1 .colorBox.off .colorCard.line6{
     top: 30%;
     animation: fadeOutUp30 1s forwards;
     animation-delay: 1.5s;
 }
-main .colorBox.off .colorCard.line7{
+.section1 .colorBox.off .colorCard.line7{
     top: 0;
     animation: fadeOutUp0 1s forwards;
     animation-delay: 1.8s;
@@ -306,21 +333,119 @@ main .colorBox.off .colorCard.line7{
     }
 }
 
-/* .first{
-    animation-name: Off, On;
-    animation-timing-function: linear;
-    animation-fill-mode:forwards;
-    animation-delay: 5s, 15s;
-    animation-duration: 1s, 1s;
+@keyframes ball {
+    0% {
+      top:0px;
+    }
+    95% {
+      width: 100px;
+    }
+    to {
+      top:300px;
+      width:115px;
+      height:90px
+    }
 }
-.second{    
-    animation-name: Off, On;
-    animation-timing-function: linear;
-    animation-fill-mode:forwards;
-    animation-delay: 0s, 5s;
-    animation-duration: 1s, 1s;
+
+/* section2 */
+.section2{
+    background-color: skyblue;
+    display: flex;
+    opacity: 0;
+    transition: 2s;
 }
-.third{
-    visibility: hidden;
-    display: none;
-} */
+.section2 .textBox{
+    width: 70%;
+}
+.section2 .textBox h2{
+    font-size: 8rem;
+    letter-spacing: .5rem;
+    color: white;
+    padding: 10% 0 5%;
+    position: relative;
+    animation: leftSlide .5s ease-out forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+.section2 .textBox h3{
+    color: white;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    padding: 0 0 5%;
+    position: relative;
+    animation: leftSlide .5s ease-out forwards;
+    animation-delay: 3.3s;
+    opacity: 0;
+}
+
+@keyframes leftSlide {
+    0%{
+        left: -25%;
+        opacity: 0;
+    }
+    100%{
+        left: 5%;
+        opacity: 1;
+    }
+}
+
+.section2 .chartBox{
+    width: 30%;
+    display: flex;
+    position: relative;
+}
+.section2 .chartBox .chartA,
+.section2 .chartBox .chartB{
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.section2 .chartBox .chart{
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+.section2 .chartA .chart .action,
+.section2 .chartB .chart .action{
+    width: 40%;
+    position: absolute;
+    bottom: 0%;
+    left: 30%;
+    background-color: blue;
+    color: white;
+}
+.section2 .chartA .chart .action{
+    animation: heightUp87 2s forwards;
+}
+.section2 .chartB .chart .action{
+    animation: heightUp80 2s forwards;
+    animation-delay: .3s;
+}
+
+.section2 .chartBox h4{
+    padding-top: 10%;
+    z-index: 1;
+    color: white;
+}
+
+@keyframes heightUp87{
+    0%{
+        height: 10%;
+    }
+    100%{
+        height: 87%;
+    }
+}
+@keyframes heightUp80{
+    0%{
+        height: 10%;
+    }
+    100%{
+        height: 80%;
+    }
+}
+
+.section3{
+    background-color: red;
+}

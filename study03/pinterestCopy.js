@@ -50,3 +50,19 @@ const loop = function () {
   setInterval(loop, 21000);
   
 })();
+
+let observer = new IntersectionObserver((e) =>{
+  e.forEach((tester)=>{
+    if (tester.isIntersecting){
+            tester.target.style.opacity = 1;
+            // tester.target.style.transform = 'rotate(0deg)';
+    } else {
+      tester.target.style.opacity = 0;
+    }
+    })
+})
+
+let section = document.querySelectorAll('section');
+observer.observe(section[0]);
+observer.observe(section[1]);
+observer.observe(section[2]);
