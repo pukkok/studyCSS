@@ -1,0 +1,195 @@
+/* blueCard */
+.colorBox .colorCard.blue:nth-child(1){
+    background-color: #4b89dc;
+}
+.colorBox .colorCard.blue:nth-child(2){
+    background-color: #6499e1;
+}
+.colorBox .colorCard.blue:nth-child(3){
+    background-color: #7eaae6;
+}
+.colorBox .colorCard.blue:nth-child(4){
+    background-color: #4b54dc;
+}
+.colorBox .colorCard.blue:nth-child(5){
+    background-color: #4b66dc;
+}
+.colorBox .colorCard.blue:nth-child(6){
+    background-color: #4b77dc;
+}
+.colorBox .colorCard.blue:nth-child(7){
+    background-color: #4b89dc;
+}
+.colorBox .colorCard.blue:nth-child(8){
+    background-color: #7fa7dc;
+}
+.colorBox .colorCard.blue:nth-child(9){
+    background-color: #6e9ddc;
+}
+.colorBox .colorCard.blue:nth-child(10){
+    background-color: #5c93dc;
+}
+.colorBox .colorCard.blue:nth-child(11){
+    background-color: #4b89dc;
+}
+.colorBox .colorCard.blue:nth-child(12){
+    background-color: #397edc;
+}
+.colorBox .colorCard.blue:nth-child(13){
+    background-color: #2774dc;
+}
+.colorBox .colorCard.blue:nth-child(14){
+    background-color: #166adc;
+}
+.colorBox .colorCard.blue:nth-child(15){
+    background-color: #447cc7;
+}
+.colorBox .colorCard.blue:nth-child(16){
+    background-color: #5195f0;
+}
+.colorBox .colorCard.blue:nth-child(17){
+    background-color: #15273e;
+}
+.colorBox .colorCard.blue:nth-child(18){
+    background-color: #203a5e;
+}
+.colorBox .colorCard.blue:nth-child(19){
+    background-color: #2a4e7d;
+}
+.colorBox .colorCard.blue:nth-child(20){
+    background-color: #1e90ff;
+}
+.colorBox .colorCard.blue:nth-child(21){
+    background-color: #4bbddc;
+}
+
+/* redCard */
+.colorBox .colorCard.red:nth-child(1){
+    background-color: #db4b4b;
+}
+.colorBox .colorCard.red:nth-child(2){
+    background-color: #e06464;
+}
+.colorBox .colorCard.red:nth-child(3){
+    background-color: #e57e7e;
+}
+.colorBox .colorCard.red:nth-child(4){
+    background-color: #ea9898;
+}
+.colorBox .colorCard.red:nth-child(5){
+    background-color: #db7e4b;
+}
+.colorBox .colorCard.red:nth-child(6){
+    background-color: #db6d4b;
+}
+.colorBox .colorCard.red:nth-child(7){
+    background-color: #db5c4b;
+}
+.colorBox .colorCard.red:nth-child(8){
+    background-color: #db4b5c;
+}
+.colorBox .colorCard.red:nth-child(9){
+    background-color: #db4b6d;
+}
+.colorBox .colorCard.red:nth-child(10){
+    background-color: #db4b7e;
+}
+.colorBox .colorCard.red:nth-child(11){
+    background-color: #db7f7f;
+}
+.colorBox .colorCard.red:nth-child(12){
+    background-color: #db6e6e;
+}
+.colorBox .colorCard.red:nth-child(13){
+    background-color: #db5c5c;
+}
+.colorBox .colorCard.red:nth-child(14){
+    background-color: #db3939;
+}
+.colorBox .colorCard.red:nth-child(15){
+    background-color: #db2727;
+}
+.colorBox .colorCard.red:nth-child(16){
+    background-color: #db1616;
+}
+.colorBox .colorCard.red:nth-child(17){
+    background-color: #ef5151;
+}
+.colorBox .colorCard.red:nth-child(18){
+    background-color: #ff5757;
+}
+.colorBox .colorCard.red:nth-child(19){
+    background-color: #c64444;
+}
+.colorBox .colorCard.red:nth-child(20){
+    background-color: #b23d3d;
+}
+.colorBox .colorCard.red:nth-child(21){
+    background-color: #9d3636;
+}
+
+/* yellowCard */
+.colorBox .colorCard.yellow:nth-child(1){
+    background-color: #fff700;
+}
+.colorBox .colorCard.yellow:nth-child(2){
+    background-color: #fff948;
+}
+.colorBox .colorCard.yellow:nth-child(3){
+    background-color: #fffb91;
+}
+.colorBox .colorCard.yellow:nth-child(4){
+    background-color: #dad300;
+}
+.colorBox .colorCard.yellow:nth-child(5){
+    background-color: #918d00;
+}
+.colorBox .colorCard.yellow:nth-child(6){
+    background-color: #484600;
+}
+.colorBox .colorCard.yellow:nth-child(7){
+    background-color: #fffa7a;
+}
+.colorBox .colorCard.yellow:nth-child(8){
+    background-color: #fff951;
+}
+.colorBox .colorCard.yellow:nth-child(9){
+    background-color: #fff828;
+}
+.colorBox .colorCard.yellow:nth-child(10){
+    background-color: #fff714;
+}
+.colorBox .colorCard.yellow:nth-child(11){
+    background-color: #e8ff00;
+}
+.colorBox .colorCard.yellow:nth-child(12){
+    background-color: #ffd800;
+}
+.colorBox .colorCard.yellow:nth-child(13){
+    background-color: #ff9b00;
+}
+.colorBox .colorCard.yellow:nth-child(14){
+    background-color: #ffd700;
+}
+.colorBox .colorCard.yellow:nth-child(15){
+    background-color: #daa520;
+}
+.colorBox .colorCard.yellow:nth-child(16){
+    background-color: #eae300;
+}
+.colorBox .colorCard.yellow:nth-child(17){
+    background-color: #d6cf00;
+}
+.colorBox .colorCard.yellow:nth-child(18){
+    background-color: #c1bb00;
+}
+.colorBox .colorCard.yellow:nth-child(19){
+    background-color: #ada700;
+}
+.colorBox .colorCard.yellow:nth-child(20){
+    background-color: #999400;
+}
+.colorBox .colorCard.yellow:nth-child(21){
+    background-color: #848000;
+}
+

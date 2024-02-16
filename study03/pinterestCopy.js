@@ -1,40 +1,52 @@
-var v1 = $(".textBox .active span.on").index();
-setInterval(function autoplay() {
+var colorBoxA = document.querySelector('#main .first'),
+    colorBoxB = document.querySelector('#main .second'),
+    colorBoxC = document.querySelector('#main .third');
 
-    var player = $(".textBox .active span").eq(v1).attr("data");
-    $(player).hide();
-    $(".textBox .active span").eq(v1).removeClass("on");
-    $(".textBox .active span").eq(v1).addClass("off");
+var selectedA = document.querySelector('#main .textBox .blue'),
+    selectedB = document.querySelector('#main .textBox .red'),
+    selectedC = document.querySelector('#main .textBox .yellow');
+
+(function () {
+
+const loop = function () {
+     
+      colorBoxC.classList.remove('off');
+      colorBoxA.classList.add('on');
+      selectedC.classList.remove('on');
+      selectedA.classList.add('on');
+
+      setTimeout(function () {
+        colorBoxA.classList.remove('on');
+        colorBoxA.classList.add('off');
+      }, 4000);
+
+      setTimeout(function () {
+        colorBoxA.classList.remove('off');
+        colorBoxB.classList.add('on');
+        selectedA.classList.remove('on');
+        selectedB.classList.add('on');
+      }, 7000);
+
+      setTimeout(function () {
+        colorBoxB.classList.remove('on');
+        colorBoxB.classList.add('off');
+      }, 11000);
+
+      setTimeout(function () {
+        colorBoxB.classList.remove('off');
+        colorBoxC.classList.add('on');
+        selectedB.classList.remove('on');
+        selectedC.classList.add('on');  
+      }, 14000);
+
+      setTimeout(function () {
+        colorBoxC.classList.remove('on');
+        colorBoxC.classList.add('off');
+      }, 18000);
     
-    if(v1<2){
-        v1++;
-        var playOn = $(".textBox .active span").eq(v1).attr("data");
-        $(".textBox .active span").eq(v1).addClass("on");
-    }else {
-        v1=0;
-        var playOn = $(".textBox .active span").eq(v1).attr("data");
-        $(".textBox .active span").eq(v1).addClass("on"); 
-    }
-    $(playOn).show();
-}, 3000);
-
-
-// var colorViewer = $(".colorBox.on").index();
-// setInterval(function autoplay() {
-
-//     var player = $(".colorBox.on").eq(colorViewer).attr("data");
-//     $(player).hide();
-//     $(".colorBox.on").eq(colorViewer).removeClass("on");
-//     $(".colorBox.on").eq(colorViewer).addClass("off");
-    
-//     if(colorViewer<2){
-//         colorViewer++;
-//         var ColorPlayOn = $(".colorBox.on").eq(colorViewer).attr("data");
-//         $(".colorBox.on").eq(colorViewer).addClass("on");
-//     }else{
-//         colorViewer=0;
-//         var colorPlayOn = $(".colorBox.on").eq(colorViewer).attr("data");
-//         $(".colorBox.on").eq(colorViewer).addClass("on");
-//     }
-//     $(colorPlayOn).show();
-// }, 3000);
+  };
+  
+  loop();
+  setInterval(loop, 21000);
+  
+})();

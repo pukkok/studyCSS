@@ -1,274 +1,219 @@
-body {
+:root{
+    --header-height : 100px;
+}
+
+body{
     padding: 0;
     margin: 0;
 }
-a {
+
+a{
     text-decoration: none;
     color: #333;
-    font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
 }
 
-header {
+/* header 영역 */
+
+header{
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    height: 80px;
-    padding: 0 2rem;
-}
-header .logoBox {
-    display: flex;
     align-items: center;
-    align-content: center;
+    height: var(--header-height);
+    padding-bottom: 1rem;
 }
+
+header .logoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logoBox img{
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+
 header .logoBox h1 {
+    margin-right: 1rem;
+}
+header .logoBox h2 {
+    font-size: 1rem;
+}
+
+header nav ul{
     margin: 0;
-    font-size: 1.5rem;
-    padding-right: 1rem;
-}
-
-header .logoBox p {
-    margin: 0;
-}
-
-header .logoBox img {
-    width: 50px;
-    height: 50px;
-    padding-right: 0.5rem;
-}
-
-header nav ul {
     display: flex;
     list-style: none;
 }
 
-header nav ul li {
+header nav ul li{
     padding: 1rem;
 }
 
-/* 메인 시작 */
+/* main 영역 */
 
-main {
+main{
+    box-sizing: border-box;
     width: 100vw;
-}
-
-main .textBox {
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
+    padding: 2rem 0;
     position: relative;
 }
-main .textBox h2 span{
-    opacity: 0;
-    display: none;
+
+main .textBox{
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 
-main .textBox h2 span.blue {
-    color: blue;
+main .textBox h2{
+    font-size: 3.5rem;
 }
-main .textBox h2 span.red {
+
+main .textBox span{
+    display: none;
+    animation: Off 1s linear forwards;
+}
+main .textBox span.on{
+    animation: On 1s linear forwards;
+    display: inline;
+}
+main .textBox span.blue{
+    color: blue;
+
+}
+main .textBox span.red{
     color: red;
 }
-main .textBox h2 span.yellow {
+main .textBox span.yellow{
     color: yellow;
 }
 
-main .textBox h2 span.on{
-    display: inline;
-    animation: playon 1s linear forwards;
-}
-main .textBox h2 span.off{
-    /* display: none; */
-    animation: playoff 1s linear forwards;
-}
-main
-
-.colorBox {
+main .colorBox{
     box-sizing: border-box;
-    overflow: hidden;
-    width: 100%;
-    padding: 3rem 3rem 0 ;
+    padding: 10% 5rem;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    position: relative;
-    top: -150px;
-    margin-bottom: 20px;
-    gap: 1rem;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.2rem;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
 }
 
-.colorBox .smallBox {
-    width: 200px;
-    height: 300px;
-    padding-bottom: 20px;
-    border-radius: 10px;
+main .colorBox .colorCard{
+    width: 100%;
+    height: 250px;
     position: relative;
     opacity: 0;
+    border-radius: 15px;
 }
 
-.t0{
-    animation: fadeinUp0 1s forwards ;
+.on{
+    opacity: 0;
+    animation: On 1s forwards;
 }
 
-.t30{
-    animation: fadeinUp30 1s forwards;
-}
+/* .second, .third{
+    visibility: hidden;
+} */
 
-.t60{
-    animation: fadeinUp60 1s forwards;
+main .colorBox.on .colorCard.line1{
+    top: 0;
+    animation: fadeInUp0 1s forwards;
 }
-.delay1{
+main .colorBox.on .colorCard.line2{
+    top: 30%;
+    animation: fadeInUp30 1s forwards;
     animation-delay: .3s;
 }
-.delay2{
+main .colorBox.on .colorCard.line3{
+    top: 50%;
+    animation: fadeInUp50 1s forwards;
     animation-delay: .6s;
 }
-.delay3{
+main .colorBox.on .colorCard.line4{
+    top: 70%;
+    animation: fadeInUp70 1s forwards;
     animation-delay: .9s;
 }
-.delay4{
+main .colorBox.on .colorCard.line5{
+    top: 50%;
+    animation: fadeInUp50 1s forwards;
     animation-delay: 1.2s;
 }
-.delay5{
+main .colorBox.on .colorCard.line6{
+    top: 30%;
+    animation: fadeInUp30 1s forwards;
     animation-delay: 1.5s;
 }
-.delay6{
+main .colorBox.on .colorCard.line7{
+    top: 0;
+    animation: fadeInUp0 1s forwards;
     animation-delay: 1.8s;
 }
-/* colorBox blue */
-.colorBox.blue .smallBox:nth-child(1) {
-    background-color: #0000ff;
+
+
+
+/* test */
+main .colorBox.off .colorCard{
+    opacity: 1;
 }
-.colorBox.blue .smallBox:nth-child(2) {
-    background-color: #0040ff;
+main .colorBox.off .colorCard.line1{
+    top: 0;
+    animation: fadeOutUp0 1s forwards;
 }
-.colorBox.blue .smallBox:nth-child(3) {
-    background-color: #006aff;
-    grid-column: 3 / 5;
+main .colorBox.off .colorCard.line2{
+    top: 30%;
+    animation: fadeOutUp30 1s forwards;
+    animation-delay: .3s;
 }
-.colorBox.blue .smallBox:nth-child(4) {
-    background-color: #0095ff;
+main .colorBox.off .colorCard.line3{
+    top: 50%;
+    animation: fadeOutUp50 1s forwards;
+    animation-delay: .6s;
 }
-.colorBox.blue .smallBox:nth-child(5) {
-    background-color: #00aaff;
+main .colorBox.off .colorCard.line4{
+    top: 70%;
+    animation: fadeOutUp70 1s forwards;
+    animation-delay: .9s;
 }
-.colorBox.blue .smallBox:nth-child(6) {
-    background-color: #00bfff;
+main .colorBox.off .colorCard.line5{
+    top: 50%;
+    animation: fadeOutUp50 1s forwards;
+    animation-delay: 1.2s;
 }
-.colorBox.blue .smallBox:nth-child(7) {
-    background-color: #00d5ff;
+main .colorBox.off .colorCard.line6{
+    top: 30%;
+    animation: fadeOutUp30 1s forwards;
+    animation-delay: 1.5s;
 }
-.colorBox.blue .smallBox:nth-child(8) {
-    background-color: #00ffff;
-}
-.colorBox.blue .smallBox:nth-child(9) {
-    background-color: #0099cc;
-}
-.colorBox.blue .smallBox:nth-child(10) {
-    background-color: #bfe4ff;
-}
-.colorBox.blue .smallBox:nth-child(11) {
-    background-color: #99bfcc;
-}
-.colorBox.blue .smallBox:nth-child(12) {
-    background-color: #39bae5;
-}
-.colorBox.blue .smallBox:nth-child(13) {
-    background-color: #66b2cc;
-}
-/* colorBox red */
-.colorBox.red .smallBox:nth-child(1) {
-    background-color: #ffa07a;
-}
-.colorBox.red .smallBox:nth-child(2) {
-    background-color: #fa8072;
-}
-.colorBox.red .smallBox:nth-child(3) {
-    background-color: #e9967a;
-    grid-column: 3 / 5;
-}
-.colorBox.red .smallBox:nth-child(4) {
-    background-color: #f08080;
-}
-.colorBox.red .smallBox:nth-child(5) {
-    background-color: #cd5c5c;
-}
-.colorBox.red .smallBox:nth-child(6) {
-    background-color: #dc143c;
-}
-.colorBox.red .smallBox:nth-child(7) {
-    background-color: #b22222;
-}
-.colorBox.red .smallBox:nth-child(8) {
-    background-color: #ff0000;
-}
-.colorBox.red .smallBox:nth-child(9) {
-    background-color: #8b0000;
-}
-.colorBox.red .smallBox:nth-child(10) {
-    background-color: #d1180b;
-}
-.colorBox.red .smallBox:nth-child(11) {
-    background-color: #ff0044;
-}
-.colorBox.red .smallBox:nth-child(12) {
-    background-color: #ff0088;
-}
-.colorBox.red .smallBox:nth-child(13) {
-    background-color: #ff4400;
-}
-/* colorBox yellow */
-.colorBox.yellow .smallBox:nth-child(1) {
-    background-color: #d2b48c;
-}
-.colorBox.yellow .smallBox:nth-child(2) {
-    background-color: #ffdab9;
-}
-.colorBox.yellow .smallBox:nth-child(3) {
-    background-color: #bdb76b;
-    grid-column: 3 / 5;
-}
-.colorBox.yellow .smallBox:nth-child(4) {
-    background-color: #ffe4b5;
-}
-.colorBox.yellow .smallBox:nth-child(5) {
-    background-color: #ffdead;
-}
-.colorBox.yellow .smallBox:nth-child(6) {
-    background-color: #f0e68c;
-}
-.colorBox.yellow .smallBox:nth-child(7) {
-    background-color: #deb887;
-}
-.colorBox.yellow .smallBox:nth-child(8) {
-    background-color: #b8860b;
-}
-.colorBox.yellow .smallBox:nth-child(9) {
-    background-color: #daa520;
-}
-.colorBox.yellow .smallBox:nth-child(10) {
-    background-color: #ffd700;
-}
-.colorBox.yellow .smallBox:nth-child(11) {
-    background-color: #ffff00;
-}
-.colorBox.yellow .smallBox:nth-child(12) {
-    background-color: #fafad2;
-}
-.colorBox.yellow .smallBox:nth-child(13) {
-    background-color: #eee8aa;
+main .colorBox.off .colorCard.line7{
+    top: 0;
+    animation: fadeOutUp0 1s forwards;
+    animation-delay: 1.8s;
 }
 
-@keyframes fadeinUp0 {
+/* keyframes */
+@keyframes fadeInUp0 {
     0%{
-        top: 5%;
+        top: 10%;
         opacity: 0;
     }
     100%{
-        top: 0%;
+        top: 0;
         opacity: 1;
     }
 }
-@keyframes fadeinUp30 {
+
+@keyframes fadeInUp30 {
     0%{
-        top: 35%;
+        top: 40%;
         opacity: 0;
     }
     100%{
@@ -276,18 +221,83 @@ main
         opacity: 1;
     }
 }
-@keyframes fadeinUp60 {
+
+@keyframes fadeInUp50 {
     0%{
-        top: 65%;
+        top: 60%;
         opacity: 0;
     }
     100%{
-        top: 60%;
+        top: 50%;
         opacity: 1;
     }
 }
 
-@keyframes playoff {
+@keyframes fadeInUp70 {
+    0%{
+        top: 80%;
+        opacity: 0;
+    }
+    100%{
+        top: 70%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutUp0 {
+    0%{
+        top: 0;
+        opacity: 1;
+    }
+    100%{
+        top: -10%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp30 {
+    0%{
+        top: 30%;
+        opacity: 1;
+    }
+    100%{
+        top: 20%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp50 {
+    0%{
+        top: 50%;
+        opacity: 1;
+    }
+    100%{
+        top: 40%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp70 {
+    0%{
+        top: 70%;
+        opacity: 1;
+    }
+    100%{
+        top: 60%;
+        opacity: 0;
+    }
+}
+
+@keyframes On {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes Off {
     0%{
         opacity: 1;
     }
@@ -295,11 +305,22 @@ main
         opacity: 0;
     }
 }
-@keyframes playon {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+
+/* .first{
+    animation-name: Off, On;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+    animation-delay: 5s, 15s;
+    animation-duration: 1s, 1s;
 }
+.second{    
+    animation-name: Off, On;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+    animation-delay: 0s, 5s;
+    animation-duration: 1s, 1s;
+}
+.third{
+    visibility: hidden;
+    display: none;
+} */
