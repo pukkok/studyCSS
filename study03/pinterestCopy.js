@@ -51,18 +51,61 @@ const loop = function () {
   
 })();
 
-let observer = new IntersectionObserver((e) =>{
-  e.forEach((tester)=>{
-    if (tester.isIntersecting){
-            tester.target.style.opacity = 1;
-            // tester.target.style.transform = 'rotate(0deg)';
-    } else {
-      tester.target.style.opacity = 0;
-    }
-    })
-})
 
-let section = document.querySelectorAll('section');
-observer.observe(section[0]);
-observer.observe(section[1]);
-observer.observe(section[2]);
+let page = document.querySelectorAll('section');
+
+// const observer = new IntersectionObserver((entries) =>{
+//   entries.forEach(entry => {
+//     if(entry.isIntersecting){ 
+//           if(entry.target.className===`page2`) {
+//             entry.target.classList.add('active')
+//             console.log(entry.isIntersecting===true)
+//           } else {
+//               page[1].classList.remove('active')
+//           }
+//           if(entry.target.className==='page3') {
+//             entry.target.classList.add('active')
+//           } else {
+//               page[2].classList.remove('active')
+//           }
+//           if(entry.target.className==='page4') {
+//             entry.target.classList.add('active')
+//           } else {
+//               page[3].classList.remove('active')
+//           }
+//     };
+//   });
+// });
+
+const observer = new IntersectionObserver((entries) =>{
+  entries.forEach(entry => {
+    if(entry.isIntersecting===true){
+      entry.target.classList.toggle('active')       
+  } else {
+    entry.target.classList.remove('active')
+  }
+  });
+});
+
+observer.observe(page[0]);
+observer.observe(page[1]);
+observer.observe(page[2]);
+observer.observe(page[3]);
+
+
+const page2TextBox = document.querySelector('.page2 .textBox')
+const page2Clicker = document.querySelectorAll('.page2 .button li')
+const page2clickerBox = document.querySelectorAll('.page2 .button li');
+
+for (let i = 0; i<page2Clicker.length; i++){
+  const clicker = page2Clicker[i];
+  const styleValue = [0, '-100%', '-200%', '-300%'][i];
+
+  clicker.addEventListener('click', () =>{
+    page2TextBox.style.top = styleValue;
+    page2clickerBox.target.classList.toggle('on')
+    console.log(clicker)
+    console.log(styleValue)
+  });
+  
+};

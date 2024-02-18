@@ -13,6 +13,7 @@
             box-sizing: border-box;
             overflow: auto;
             scroll-snap-type: y mandatory;
+            /* height: calc(100vh * 4); */
             height: 100vh;
         }
         section{
@@ -33,15 +34,12 @@
             padding: 20%;
             font-size: 3rem;
         } */
-        
 
         .page1{
             background-color: skyblue;
-            display: none;
         }
         .page2{
             background-color: violet;
-            overflow: hidden;
         }
         .page3{
             background-color: red;
@@ -49,54 +47,15 @@
         .page4{
             background-color: gold;
         }
-        .page2 .testBox{
-            width: 100vw;
-            height: 200px;
-            white-space: nowrap;
-            font-size: 0;
-            transition: 1s;
-            margin-left: 0vw;
-        }
-        .page2 .testBox > div{
-            width: 100%;
-            height: 200px;
-            display: inline-block;
-            text-align: center;
-            font-size: 1rem;
-            
-        }
-        .page2 .testBox > div:nth-child(1){
-            background-color: blue;
-        }
-        
-        .page2 .testBox > div:nth-child(2){
-            background-color: red;
-        }
-        
-        .page2 .testBox > div:nth-child(3){
-            background-color: yellow;
-        }
     </style>
-        <script defer src="test.js"></script>
 </head>
 <body>
     <main>
     <section class="page1">
         <h1>보이는 글씨</h1>
-        <h2>30</h2>
     </section>
     <section class="page2">
         <h1>보이는 글씨</h1>
-        <div class="testBox">
-        <div>a</div>
-        <div>b</div>
-        <div>c</div>
-        </div>
-        <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-        </ul>
     </section>
     <section class="page3">
         <h1>보이는 글씨</h1>
@@ -105,6 +64,7 @@
         <h1>보이는 글씨</h1>
     </section>
     </main>
+    <script src="test02.js"></script>
 </body>
 
 </html>
