@@ -32,7 +32,7 @@ header{
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 2vw;
+    padding: 0 3%;
     padding-bottom: 1rem;
     z-index: 10;
 }
@@ -277,6 +277,7 @@ section:nth-last-child(1){
 }
 .page3 .textBox{
     width: 65%;
+    padding-left: 2%;
 }
 .page3 .textBox h2{
     font-size: 7.2rem;
@@ -345,10 +346,11 @@ section:nth-last-child(1){
     animation-delay: 1.1s;
 }
 
-.page4{
-    /* background-color: yellow; */
+.page4 img{
+    width: 80%;
+    max-width: fit-content;
+    height: 90%;
 }
-
 
 /* 애니메이션 */
 @keyframes fadeInUp0 {
