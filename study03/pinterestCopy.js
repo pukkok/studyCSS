@@ -79,8 +79,8 @@ let page = document.querySelectorAll('section');
 
 const observer = new IntersectionObserver((entries) =>{
   entries.forEach(entry => {
-    if(entry.isIntersecting===true){
-      entry.target.classList.toggle('active')       
+    if(entry.isIntersecting){
+      entry.target.classList.add('active')       
   } else {
     entry.target.classList.remove('active')
   }
@@ -94,18 +94,21 @@ observer.observe(page[3]);
 
 
 const page2TextBox = document.querySelector('.page2 .textBox')
-const page2Clicker = document.querySelectorAll('.page2 .button li')
-const page2clickerBox = document.querySelectorAll('.page2 .button li');
+const page2ClickerContainer = document.querySelector('.page2 .button')
+const page2Clicker = page2ClickerContainer.querySelectorAll('li')
 
 for (let i = 0; i<page2Clicker.length; i++){
   const clicker = page2Clicker[i];
   const styleValue = [0, '-100%', '-200%', '-300%'][i];
-
+  
   clicker.addEventListener('click', () =>{
     page2TextBox.style.top = styleValue;
-    page2clickerBox.target.classList.toggle('on')
-    console.log(clicker)
-    console.log(styleValue)
+
+    if(page2ClickerContainer.querySelector('.on')){
+        page2ClickerContainer.querySelector('.on').classList.remove('on')
+        clicker.classList.add('on')
+    }
+    
   });
   
 };
