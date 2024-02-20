@@ -1,0 +1,494 @@
+:root{
+    --header-height : 100px;
+    --main-color: blanchedalmond;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+h2{
+    font-size: 3.5rem;
+}
+
+/* header 영역 */
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: var(--header-height);
+    /* background-color: var(--main-color); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 2vw;
+    padding-bottom: 1rem;
+    z-index: 10;
+}
+
+header .logoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logoBox img{
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+header .logoBox h1 {
+    margin-right: 1rem;
+}
+header .logoBox h2 {
+    font-size: 1rem;
+}
+
+header nav ul{
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li{
+    padding: 1rem;
+}
+
+/* main 영역 */
+
+main{
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    width: 100vw;
+    height: 100vh;
+}
+
+section{
+    background-color: var(--main-color);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-top: var(--header-height);
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    margin-bottom: .1vh;
+}
+section:nth-last-child(1){
+    margin-top: .1vh;
+}
+
+/* page1 영역 */
+.page1{
+    background-color: white;
+}
+
+.page1 .textBox{
+    width: 100%;
+    text-align: center;
+}
+
+.page1 .textBox h2{
+    font-size: 3.5rem;
+}
+
+.page1 .textBox span{
+    display: none;
+}
+.page1 .textBox span.on{
+    display: inline;
+}
+.on{
+    opacity: 0;
+    animation: On 1s forwards;
+}
+
+.page1 .textBox span.blue{
+    color: blue;
+}
+.page1 .textBox span.red{
+    color: red;
+}
+.page1 .textBox span.yellow{
+    color: yellow;
+}
+
+.page1 .colorBox{
+    box-sizing: border-box;
+    padding: 10% 5rem;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.2rem;
+    position: absolute;
+    top: var(--header-height);
+    overflow: hidden;
+}
+
+.page1 .colorBox .colorCard{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    opacity: 0;
+    border-radius: 15px;
+}
+
+.page1 .colorBox.on .colorCard.line1{
+    animation: fadeInUp0 1s forwards;
+}
+.page1 .colorBox.on .colorCard.line2{
+    animation: fadeInUp30 1s forwards;
+    animation-delay: .3s;
+}
+.page1 .colorBox.on .colorCard.line3{
+    animation: fadeInUp50 1s forwards;
+    animation-delay: .6s;
+}
+.page1 .colorBox.on .colorCard.line4{
+    animation: fadeInUp70 1s forwards;
+    animation-delay: .9s;
+}
+.page1 .colorBox.on .colorCard.line5{
+    animation: fadeInUp50 1s forwards;
+    animation-delay: 1.2s;
+}
+.page1 .colorBox.on .colorCard.line6{
+    animation: fadeInUp30 1s forwards;
+    animation-delay: 1.5s;
+}
+.page1 .colorBox.on .colorCard.line7{
+    animation: fadeInUp0 1s forwards;
+    animation-delay: 1.8s;
+}
+
+.page1 .colorBox.off .colorCard{
+    opacity: 1;
+}
+.page1 .colorBox.off .colorCard.line1{
+    top: 0;
+    animation: fadeOutUp0 1s forwards;
+}
+.page1 .colorBox.off .colorCard.line2{
+    top: 30%;
+    animation: fadeOutUp30 1s forwards;
+    animation-delay: .3s;
+}
+.page1 .colorBox.off .colorCard.line3{
+    top: 50%;
+    animation: fadeOutUp50 1s forwards;
+    animation-delay: .6s;
+}
+.page1 .colorBox.off .colorCard.line4{
+    top: 70%;
+    animation: fadeOutUp70 1s forwards;
+    animation-delay: .9s;
+}
+.page1 .colorBox.off .colorCard.line5{
+    top: 50%;
+    animation: fadeOutUp50 1s forwards;
+    animation-delay: 1.2s;
+}
+.page1 .colorBox.off .colorCard.line6{
+    top: 30%;
+    animation: fadeOutUp30 1s forwards;
+    animation-delay: 1.5s;
+}
+.page1 .colorBox.off .colorCard.line7{
+    top: 0;
+    animation: fadeOutUp0 1s forwards;
+    animation-delay: 1.8s;
+}
+
+/* page2 */
+.page2{
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.page2 .overflow-hidden{
+    overflow: hidden;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 5% 5% 0;
+    border: solid 1px rgb(237, 160, 29);
+}
+.page2 .textBox{
+    width: 100%;
+    height: 100%;   
+    transition: 1s;
+    position: relative;
+}
+.page2 .textBox h2{
+    font-size: 3rem;
+    padding-bottom: 1.5rem;
+}
+.page2 .textBox h3{
+    font-size: 1.5rem;
+}
+.page2 .textBox p{
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+.page2 .textBox div{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.page2 .button{
+    margin: 0;
+    padding: 0 15% 0 0;
+    width: 20%;
+    height: 100%;
+    list-style: none;
+}
+.page2 .button li{
+    border: solid 1px rgb(237, 160, 29);
+    border-collapse: collapse;
+    padding: 10%;
+    font-size: 30px;
+    font-weight: bold;
+}
+.page2 .button li:hover{
+    background-color: #fcc368;
+    color: white;
+    cursor: pointer;
+}
+.page2 .button li.on{
+    background-color: #fcc368;
+    color: white;
+}
+
+/* page3 */
+.page3{
+    display: flex;
+}
+.page3 .textBox{
+    width: 65%;
+}
+.page3 .textBox h2{
+    font-size: 7.2rem;
+    letter-spacing: -.2rem;
+    color: white;
+    padding: 10% 0 5%;
+    position: relative;
+    opacity: 0;
+}
+
+.page3 .textBox h3{
+    line-height: 2.5rem;
+    letter-spacing: -.1rem;
+    font-size: 1.1rem;
+    padding: 0 0 5%;
+    position: relative;
+    opacity: 0;
+}
+
+.page3 .chartBox{
+    width: 25%;
+    margin-right: 10%;
+    display: flex;
+    position: relative;
+    right: 0;
+    text-align: center;
+}
+.page3 .chartBox .chart{
+    width: 100%;
+}
+.page3 .chartBox .chart > div{
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+.page3 .chartBox .chart > div h4{
+    width: 50%;
+    background-color: rgb(195, 146, 255);
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+.page3 .chartBox .chart > h4{
+    padding-top: 10%;
+    z-index: 1;
+    font-size: 1.6rem;
+}
+
+.page3.active .textBox h2{
+    animation: leftIn .5s ease-out forwards;
+    animation-delay: .5s;
+}
+.page3.active .textBox h3{
+    animation: leftIn .5s ease-out forwards;
+    animation-delay: .8s;
+}
+
+.page3.active .chartBox .chart > div .graphA{
+    animation: heightUp87 2s forwards;
+    animation-delay: 1s;
+}
+.page3.active .chartBox .chart > div .graphB{
+    animation: heightUp80 2s forwards;
+    animation-delay: 1.1s;
+}
+
+.page4{
+    /* background-color: yellow; */
+}
+
+
+/* 애니메이션 */
+@keyframes fadeInUp0 {
+    0%{
+        top: 10%;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp30 {
+    0%{
+        top: 40%;
+        opacity: 0;
+    }
+    100%{
+        top: 30%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp50 {
+    0%{
+        top: 60%;
+        opacity: 0;
+    }
+    100%{
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp70 {
+    0%{
+        top: 80%;
+        opacity: 0;
+    }
+    100%{
+        top: 70%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutUp0 {
+    0%{
+        top: 0;
+        opacity: 1;
+    }
+    100%{
+        top: -10%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp30 {
+    0%{
+        top: 30%;
+        opacity: 1;
+    }
+    100%{
+        top: 20%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp50 {
+    0%{
+        top: 50%;
+        opacity: 1;
+    }
+    100%{
+        top: 40%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutUp70 {
+    0%{
+        top: 70%;
+        opacity: 1;
+    }
+    100%{
+        top: 60%;
+        opacity: 0;
+    }
+}
+
+@keyframes On {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes ball {
+    0% {
+      top:0px;
+    }
+    95% {
+      width: 100px;
+    }
+    to {
+      top:300px;
+      width:115px;
+      height:90px
+    }
+}
+
+@keyframes leftIn {
+    0%{
+        left: -25%;
+        opacity: 0;
+    }
+    100%{
+        left: 5%;
+        opacity: 1;
+    }
+}
+
+@keyframes heightUp87{
+    0%{
+        height: 10%;
+    }
+    100%{
+        height: 87%;
+        padding-top: 10%;
+    }
+}
+
+@keyframes heightUp80{
+    0%{
+        height: 10%;
+    }
+    100%{
+        height: 80%;
+        padding-top: 10%;
+    }
+}
