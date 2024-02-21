@@ -11,7 +11,10 @@ logoBox.innerHTML =`
 <h2><a href="#">탐색</a></h2>
 `
 const nav = document.createElement('nav')
+const underLine = document.createElement('div')
+underLine.className = `underLine`
 const navUl = document.createElement('ul')
+navUl.append(underLine)
 
 const Navs = [
   { text: `소개`, link: `#`},
@@ -20,7 +23,6 @@ const Navs = [
   { text: `로그인`, link: `#`},
   { text: `가입하기`, link: `#`},
 ]
-
 for (const nav of Navs){
   const $li = document.createElement('li');
   const $a = document.createElement('a');
@@ -30,6 +32,17 @@ for (const nav of Navs){
 }
 
 nav.append(navUl)
+const menus = navUl.querySelectorAll('a')
+
+menus.forEach(navList =>
+  navList.addEventListener('mouseover',(e)=>indicator(e)))
+
+let indicator = (e) =>{ 
+  underLine.style.left = `${e.currentTarget.offsetLeft}px`
+  underLine.style.width = `${e.currentTarget.offsetWidth}px`
+  underLine.style.top = `${e.currentTarget.offsetTop + e.currentTarget.offsetHeight}px`
+  console.log(underLine.style)
+}
 
 header.append(logoBox, nav)
 
@@ -116,8 +129,8 @@ pointer.id = `pointer`
 
 const movePointer = (e) =>{
   // console.log(e.clientX, e.clientY)
-  pointer.style.left = `${e.clientX}px`
-  pointer.style.top = `${e.clientY}px`
+  pointer.style.left = `${e.clientX+10}px`
+  pointer.style.top = `${e.clientY+10}px`
 }
 
 window.addEventListener('mousemove', movePointer)

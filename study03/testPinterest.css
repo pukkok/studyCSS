@@ -2,9 +2,9 @@
     --header-height : 100px;
     --main-color: blanchedalmond;
 }
-*{
+/* *{
     cursor: none;
-}
+} */
 body{
     padding: 0;
     margin: 0;
@@ -62,10 +62,24 @@ header nav ul{
     margin: 0;
     display: flex;
     list-style: none;
+    position: relative;
+}
+header nav ul .underLine{
+    position: absolute;
+    box-sizing: border-box;
+    /* background-color: rgb(195, 146, 255); */
+    border: solid 2px rgb(195, 146, 255);
+    transition: .3s;
 }
 
 header nav ul li{
     padding: 1rem;
+}
+header nav ul li a{
+    font-weight: bold;
+}
+header nav ul li:hover a{
+    color: rgb(195, 146, 255);
 }
 
 /* main 영역 */
@@ -352,13 +366,13 @@ section:nth-last-child(1){
 }
 
 #pointer{
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     background-color: peru;
     background-image: url('./imgs/pointer.png');
     background-repeat: no-repeat;
