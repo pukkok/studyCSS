@@ -12,12 +12,21 @@ logoBox.innerHTML =`
 `
 const nav = document.createElement('nav')
 const navUl = document.createElement('ul')
-for(i=0; i<5; i++){
-  const list = document.createElement(`li`)
-  const aTag = document.createElement('a')
-  const text = [`소개`, `비즈니스`, `언론`, `로그인`, `가입하기`]
-  aTag.innerText= text[i]
-  navUl.appendChild(list).append(aTag)
+
+const Navs = [
+  { text: `소개`, link: `#`},
+  { text: `비즈니스`, link: `#`},
+  { text: `언론`, link: `#`},
+  { text: `로그인`, link: `#`},
+  { text: `가입하기`, link: `#`},
+]
+
+for (const nav of Navs){
+  const $li = document.createElement('li');
+  const $a = document.createElement('a');
+  $a.innerText= nav.text;
+  $a.setAttribute('href', nav.link);
+  navUl.appendChild($li).append($a);
 }
 
 nav.append(navUl)
@@ -101,17 +110,28 @@ chartB.innerHTML = `
 chartBox.append(chartA, chartB)
 page3.append(p3TextBox, chartBox)
 main.append(page3)
+
+const pointer = document.createElement('div')
+pointer.id = `pointer`
+
+const movePointer = (e) =>{
+  // console.log(e.clientX, e.clientY)
+  pointer.style.left = `${e.clientX}px`
+  pointer.style.top = `${e.clientY}px`
+}
+
+window.addEventListener('mousemove', movePointer)
+
 // 구현
-root.append(header, main)
+root.append(header, main, pointer)
 
-var colorBoxA = document.querySelector('#main .page1 .colorBox.blue'),
-    colorBoxB = document.querySelector('#main .page1 .colorBox.red'),
-    colorBoxC = document.querySelector('#main .page1 .colorBox.yellow');
+const colorBoxA = document.querySelector('#main .page1 .colorBox.blue'),
+      colorBoxB = document.querySelector('#main .page1 .colorBox.red'),
+      colorBoxC = document.querySelector('#main .page1 .colorBox.yellow');
 
-var selectedA = document.querySelector('#main .textBox .blue'),
-    selectedB = document.querySelector('#main .textBox .red'),
-    selectedC = document.querySelector('#main .textBox .yellow');
-// console.log(colorBoxC)
+const selectedA = document.querySelector('#main .textBox .blue'),
+      selectedB = document.querySelector('#main .textBox .red'),
+      selectedC = document.querySelector('#main .textBox .yellow');
 
 (function () {
 
@@ -172,8 +192,8 @@ const observer = new IntersectionObserver((entries) =>{
 
 observer.observe(page[0]);
 observer.observe(page[1]);
-observer.observe(page[2]);
-observer.observe(page[3]);
+// observer.observe(page[2]);
+// observer.observe(page[3]);
 
 
 // const page2TextBox = document.querySelector('.page2 .textBox')
