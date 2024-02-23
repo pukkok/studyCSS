@@ -37,7 +37,7 @@ const menus = navUl.querySelectorAll('a')
 menus.forEach(navList =>
   navList.addEventListener('mouseover',(e)=>indicator(e)))
 
-let indicator = (e) =>{ 
+let indicator = (e) =>{
   underLine.style.left = `${e.currentTarget.offsetLeft}px`
   underLine.style.width = `${e.currentTarget.offsetWidth}px`
   underLine.style.top = `${e.currentTarget.offsetTop + e.currentTarget.offsetHeight}px`
@@ -195,7 +195,7 @@ let page = document.querySelectorAll('section');
 
 const observer = new IntersectionObserver((entries) =>{
   entries.forEach(entry => {
-    if(entry.isIntersecting===true){
+    if(entry.isIntersecting){
       entry.target.classList.toggle('active')       
   } else {
     entry.target.classList.remove('active')

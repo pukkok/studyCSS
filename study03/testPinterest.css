@@ -67,7 +67,9 @@ header nav ul{
 header nav ul .underLine{
     position: absolute;
     box-sizing: border-box;
-    /* background-color: rgb(195, 146, 255); */
+    left: 56px;
+    width: 32px;
+    top: 37px;
     border: solid 2px rgb(195, 146, 255);
     transition: .3s;
 }
