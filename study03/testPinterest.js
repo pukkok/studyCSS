@@ -12,7 +12,7 @@ logoBox.innerHTML =`
 `
 const nav = document.createElement('nav')
 const underLine = document.createElement('div')
-underLine.className = `underLine`
+underLine.className = `underLine` 
 const navUl = document.createElement('ul')
 navUl.append(underLine)
 
