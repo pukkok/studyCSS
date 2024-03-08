@@ -58,18 +58,15 @@ for(i=0; i<creditTexts.length; i++){
 const creditBoxItems = creditBox.querySelectorAll('.credit-box div')
 
 
-// const nav
+
 // 보완 필요
-let checkPoint = section2.getBoundingClientRect()
-let test = (e) => {
-    let check = nav.getBoundingClientRect()
-    // console.log(section2.offsetTop)
-    console.log(check.top)
-    // console.log(check.y)
-    if(check.y < 0){
+// 깔끔하지 않음 // 수정필요
+let checkPoint = nav.getBoundingClientRect()
+let test = () => {
+    if(window.scrollY > checkPoint.y-30){
         nav.classList.add('sticky')
     }else{
-        // nav.classList.remove('sticky')
+        nav.classList.remove('sticky')
     }
 }
 
@@ -86,25 +83,25 @@ const moveToContents = (e) => {
 
     navList.forEach((li) => {
         li.classList.remove('active')
-    });
+    })
 
     if(e.target.innerText==='RUNWAY'){
-        window.scrollBy({top : runwayPoint.y})
+        window.scrollBy({top : runwayPoint.y-100})
         navList[0].classList.add('active')
     }
 
     if(e.target.innerText==='LOOKBOOK'){
-        window.scrollBy({top : lookbookPoint.y, behavior:'auto'})
+        window.scrollBy({top : lookbookPoint.y-200})
         navList[1].classList.add('active')
     }
 
     if(e.target.innerText==='SHOP'){
-        window.scrollBy({top : shopPoint.top})
+        window.scrollBy({top : shopPoint.top-100})
         navList[2].classList.add('active')
     }
 
     if(e.target.innerText==='LATE SEASON'){
-        window.scrollBy({top : latePoint.top})
+        window.scrollBy({top : latePoint.top-100})
         navList[3].classList.add('active')
     }
 }
@@ -128,12 +125,14 @@ const addList = () => {
 const changeCredit = (e) => {
     if(e.target.className==='next'){
         creditBoxItems.forEach(item => {
+            btnBox.querySelector('p').innerText='2 / 2'
             btnBoxPrevBtn.disabled = false
             item.style.left = '-100%'
             btnBoxNextBtn.disabled = true
         })
     }else if(e.target.className=== 'prev'){
         creditBoxItems.forEach(item => {
+            btnBox.querySelector('p').innerText='1 / 2'
             btnBoxNextBtn.disabled = false
             item.style.left = '0%'
             btnBoxPrevBtn.disabled = true
