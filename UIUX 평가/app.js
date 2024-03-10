@@ -61,9 +61,22 @@ const creditBoxItems = creditBox.querySelectorAll('.credit-box div')
 
 // 보완 필요
 // 깔끔하지 않음 // 수정필요
+
+// let stickyPoint = new IntersectionObserver((entries)=>{
+//     entries.forEach((e)=>{
+//         console.log(e.intersectionRatio)
+//         if(e.intersectionRatio > 0){
+//             nav.classList.remove('sticky')
+//         }else{
+//             nav.classList.add('sticky')
+//         }
+//     })
+// })
+// stickyPoint.observe(section1)
+
 let checkPoint = nav.getBoundingClientRect()
 let test = () => {
-    if(window.scrollY > checkPoint.y-30){
+    if(window.scrollY >= checkPoint.y-19){
         nav.classList.add('sticky')
     }else{
         nav.classList.remove('sticky')
@@ -75,38 +88,86 @@ window.addEventListener('scroll', test)
 const section5TextBox = section5.querySelectorAll('.text-box')
 const navList = nav.querySelectorAll('li')
 
-const moveToContents = (e) => {
-    let runwayPoint = section1.getBoundingClientRect()
-    let lookbookPoint = lookbookContainer.getBoundingClientRect()
-    let shopPoint = section5TextBox[0].getBoundingClientRect()
-    let latePoint = section5TextBox[1].getBoundingClientRect()
+let runwayPoint = section1.getBoundingClientRect()
+let lookbookPoint = section3.getBoundingClientRect()
 
-    navList.forEach((li) => {
-        li.classList.remove('active')
+let shopPoint = section5.getBoundingClientRect()
+let latePoint = section5TextBox[1].getBoundingClientRect()
+
+
+let observer = new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{
+        console.log('check',e.boundingClientRect)
+        if(e.isIntersecting){
+            navList.forEach((li)=>{
+                li.classList.remove('active')
+            })
+            if(e.target === section1){
+                navList[0].classList.add('active')
+            }else if(e.target === section3){
+                navList[1].classList.add('active')
+            }
+            else if(e.target === section5TextBox[0]){
+                navList[2].classList.add('active')
+            }
+            else if(e.target === section5TextBox[1]){
+                navList[3].classList.add('active')
+            }
+        }
+        
     })
+})
 
-    if(e.target.innerText==='RUNWAY'){
-        window.scrollBy({top : runwayPoint.y-100})
-        navList[0].classList.add('active')
-    }
+observer.observe(section1)
+observer.observe(section3)
+observer.observe(section5TextBox[0])
+observer.observe(section5TextBox[1])
 
-    if(e.target.innerText==='LOOKBOOK'){
-        window.scrollBy({top : lookbookPoint.y-200})
-        navList[1].classList.add('active')
-    }
 
-    if(e.target.innerText==='SHOP'){
-        window.scrollBy({top : shopPoint.top-100})
-        navList[2].classList.add('active')
-    }
+// 스크롤 이동시 리스트 액티브
+// const scrollToContents = () => {
+//     navList.forEach((li) => {
+//         li.classList.remove('active')
+//     })
+//     if(window.scrollY>=Math.floor(latePoint.bottom)){
+//         navList[3].classList.add('active')
+//     }else
+//     if(window.scrollY>=Math.floor(shopPoint.bottom)){
+//         navList[2].classList.add('active')
+//     }else
+//     if(window.scrollY>=Math.floor(lookbookPoint.y)){
+//         navList[1].classList.add('active')
+//     }else
+//     if(window.scrollY>=Math.floor(runwayPoint.y)){
+//         navList[0].classList.add('active')
+//     }
+// }
 
-    if(e.target.innerText==='LATE SEASON'){
-        window.scrollBy({top : latePoint.top-100})
-        navList[3].classList.add('active')
-    }
+// let observer = new IntersectionObserver((e)=>{
+//     navList.forEach((list)=>{
+//         list.classList.remove('active')
+//     })
+// })
+
+// 클릭시 li 액티브
+const moveToContents = (e) => {
+    console.log()
+    navList.forEach((li) => {
+        if(e.target===navList[0]){
+            window.scrollTo(0,0)
+        }
+        if(li.classList.contains('active')){
+            li.classList.remove('active')
+        }
+        if(e.target===li){
+            li.classList.add('active')
+        }
+    })
 }
 
+
 nav.addEventListener('click', moveToContents)
+// window.addEventListener('scroll', scrollToContents)
 
 // 섹션3 리스트 추가 제거
 const addList = () => {
@@ -176,8 +237,8 @@ const changePage = (e) => {
         modal(i-1)
     }
 }
+
 let lookbookModal
-console.log('테스트',lookbookModal)
 const showModal = (i) => {
     modal(i)
     lookbookModal = section3.querySelector('.lookbook-modal')
