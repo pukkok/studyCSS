@@ -62,21 +62,9 @@ const creditBoxItems = creditBox.querySelectorAll('.credit-box div')
 // 보완 필요
 // 깔끔하지 않음 // 수정필요
 
-// let stickyPoint = new IntersectionObserver((entries)=>{
-//     entries.forEach((e)=>{
-//         console.log(e.intersectionRatio)
-//         if(e.intersectionRatio > 0){
-//             nav.classList.remove('sticky')
-//         }else{
-//             nav.classList.add('sticky')
-//         }
-//     })
-// })
-// stickyPoint.observe(section1)
-
-let checkPoint = nav.getBoundingClientRect()
+let stickyPoint = nav.getBoundingClientRect()
 let test = () => {
-    if(window.scrollY >= checkPoint.y-19){
+    if(window.scrollY >= stickyPoint.y-19){
         nav.classList.add('sticky')
     }else{
         nav.classList.remove('sticky')
@@ -123,51 +111,22 @@ observer.observe(section3)
 observer.observe(section5TextBox[0])
 observer.observe(section5TextBox[1])
 
+// 클릭시 스크롤 이동
+let navAtag = nav.querySelectorAll('a')
+console.log(navAtag)
 
-// 스크롤 이동시 리스트 액티브
-// const scrollToContents = () => {
-//     navList.forEach((li) => {
-//         li.classList.remove('active')
-//     })
-//     if(window.scrollY>=Math.floor(latePoint.bottom)){
-//         navList[3].classList.add('active')
-//     }else
-//     if(window.scrollY>=Math.floor(shopPoint.bottom)){
-//         navList[2].classList.add('active')
-//     }else
-//     if(window.scrollY>=Math.floor(lookbookPoint.y)){
-//         navList[1].classList.add('active')
-//     }else
-//     if(window.scrollY>=Math.floor(runwayPoint.y)){
-//         navList[0].classList.add('active')
-//     }
-// }
-
-// let observer = new IntersectionObserver((e)=>{
-//     navList.forEach((list)=>{
-//         list.classList.remove('active')
-//     })
-// })
-
-// 클릭시 li 액티브
-const moveToContents = (e) => {
-    console.log()
-    navList.forEach((li) => {
+const clickTest = (e) => {
+    navList.forEach((li, i)=>{
+        if(e.target===li){
+            navAtag[i].click()
+        }
         if(e.target===navList[0]){
             window.scrollTo(0,0)
-        }
-        if(li.classList.contains('active')){
-            li.classList.remove('active')
-        }
-        if(e.target===li){
-            li.classList.add('active')
         }
     })
 }
 
-
-nav.addEventListener('click', moveToContents)
-// window.addEventListener('scroll', scrollToContents)
+nav.addEventListener('click', clickTest)
 
 // 섹션3 리스트 추가 제거
 const addList = () => {
@@ -180,9 +139,12 @@ const addList = () => {
         lookbookContainer.innerHTML =''
         lookIndex = 6
         showList(lookIndex)
+        lookBtn.innerText = 'SEE ALL THE LOOKS'
+        window.scrollTo(0, section3.scrollHeight)
     }
 }
 
+// 크레딧창 변경
 const changeCredit = (e) => {
     if(e.target.className==='next'){
         creditBoxItems.forEach(item => {
@@ -219,44 +181,48 @@ const modal = (i) => {
     closeBtn.className = 'close'
     closeBtn.innerText = 'x'
     div.append(img, pTag, prevBtn, nextBtn, closeBtn)
-    section3.append(div)
+    return div
 }
 
-const closePage = (e) => {
-    if(e.target.classList.contains('close')){
-        lookbookModal.remove()
-    }
+const displayModal = (i) => {
+    section3.append(modal(i))
 }
 
 const changePage = (e) => {
     console.log(e.target)
+    if(e.target.classList.contains('close')){
+        lookbookModal.remove()
+    }
     if(e.target.classList.contains('next')){
-        modal(i+1)
+        changeModal(i+1)
     }
     else if(e.target.classList.contains('prev')){
-        modal(i-1)
+        changeModal(i-1)
     }
 }
 
-let lookbookModal
-const showModal = (i) => {
-    modal(i)
+
+
+
+const changeModal = (i) => {
     lookbookModal = section3.querySelector('.lookbook-modal')
-    // 여러번 구현할수있도록 하기
-    if(lookbookModal.classList.contains('lookbook-modal')){
-        modalPrev = lookbookModal.querySelector('.prev')
-        modalNext = lookbookModal.querySelector('.next')
-        modalPrev.addEventListener('click', ()=>(modal(i-1)))
-        modalNext.addEventListener('click',()=> modal(i+1))
-        lookbookModal.addEventListener('click', closePage)
-    }
+    lookbookModal.innerHTML =''
+    displayModal(i)
+    // // 여러번 구현할수있도록 하기
+    // if(lookbookModal.classList.contains('lookbook-modal')){
+    //     modalPrev = lookbookModal.querySelector('.prev')
+    //     modalNext = lookbookModal.querySelector('.next')
+    //     modalPrev.addEventListener('click', ()=>(modal(i-1)))
+    //     modalNext.addEventListener('click',()=> modal(i+1))
+    //     lookbookModal.addEventListener('click', closePage)
+    // }
 }
 
 
 
 
 lookbookItems.forEach((item, i)=>{
-    item.addEventListener('click', ()=> showModal(i))
+    item.addEventListener('click', ()=> displayModal(i))
 })
 
 lookBtn.addEventListener('click', addList)
