@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>position basic</title>
+        <style>
+            body {
+                width: 200vw;
+                height: 300vh;
+            }
+
+            .container {
+                background-color: #ccc;
+                width: 800px;
+                height: 600px;
+                position: relative;
+                margin: 0 auto;
+            }
+
+            .container .static,
+            .container .relative, 
+            .container .absolute,
+            .container .fix,
+            .container .sticky {
+                width: 150px;
+                height: 150px;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .container .text-box{
+                float: right;
+                text-align: right;
+                padding-right: 30px;
+            }
+
+            .container .static {
+                background-color: yellowgreen;
+                z-index: 2;
+                position: static;
+                top: 50%;
+                left: 50%;
+                /* transform: translate(-50%, -50%); */
+            }
+            .container .relative {
+                background-color: skyblue;
+                position: relative;
+                left: 50%;
+                top: 50%;
+                /* transform: translate(-50%, -50%); */
+                z-index: 3;
+            }
+            .container .absolute {
+                background-color: pink;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .container .fix {
+                background-color: royalblue;
+                position: fixed;
+                bottom: 100px;
+                right: 50px;
+            }
+
+            .sticky{
+                background-color: salmon;
+                position: sticky;
+                top: 20px;
+                left: 400px;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="text-box">
+                <p>static : 움직이는 기능 x</p>
+                <p>relative : absolute를 제외한 이전 형제 기준 x, y 점 출발</p>
+                <p>absolute : 부모 기준 꼭지점에서 x, y 점 출발</p>
+                <p>sticky : 부모 컨테이너 안에서 현재 보이는 화면 기준으로 x, y 고정</p>
+                <p>fix : 화면에 고정</p>
+            </div>
+            <div class="static">static</div>
+            <div class="relative">relative</div>
+            <div class="absolute">absolute</div>
+            <div class="fix">fix</div>
+            <div class="sticky">sticky</div>
+        </div>
+    </body>
+</html>

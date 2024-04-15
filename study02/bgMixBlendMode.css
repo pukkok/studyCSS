@@ -28,5 +28,6 @@ body {
 .container section:not(.contact){
     background-color: #333;
     color: #fff;
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
+    mix-blend-mode:multiply;
 }
