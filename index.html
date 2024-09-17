@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: flex;
+        }
+        section{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        section > a {
+            all: unset;
+            display: block;
+            box-sizing: border-box;
+            border: 1px solid #333;
+            border-radius: 12px;
+            width: 250px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        a.off{
+            display: none;
+        }
+        div > a:not(:nth-last-child(1)){
+            margin-bottom: 10px;
+        }
+        h3{
+            margin: 0;
+            margin-bottom: 10px;
+        }       
+        a:hover{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>
+            <input id="search-input" autocomplete="false"><button type="submit">검색</button>
+        </label>
+    </form>
+
+    <section>
+        <a href="study02/hoverOption.html">
+            <h3>마우스 호버</h3>
+            <p>스타일 모음</p>
+        </a>
+        <a href="loading/loading01.html">
+            <h3>로딩</h3>
+            <p>1-점프점프</p>
+        </a>
+        <a href="loading/Loading02.html">
+            <h3>로딩</h3>
+            <p>2-빙글빙글</p>
+        </a>
+        <a href="study02/positionBasic.html">
+            <h3>기초</h3>
+            <p>포지션(position)</p>
+        </a>
+        <a href="study02/track_planet.html">
+            <h3>애니메이션</h3>
+            <p>행성 회전</p>
+        </a>
+        <a href="study02/bgMixBlendMode.html">
+            <h3>스킬</h3>
+            <p>믹스 블렌더</p>
+        </a>
+        <a href="study02/linkDropDown.html">
+            <h3>스킬</h3>
+            <p>링크드롭다운</p>
+        </a>
+        <a href="study02/instagram_copy.html">
+            <h3>클론 코딩 연습</h3>
+            <p>인스타그램</p>
+        </a>
+        <a href="study03/testPinterest.html">
+            <h3>클론 코딩 연습</h3>
+            <p>핀터레스트</p>
+        </a>
+        <a href="study03/pinterestCopy.html">
+            <h3>그냥 연습</h3>
+            <p>핀터레스트</p>
+        </a>
+        <a href="study03/index.html">
+            <h3>그냥 연습</h3>
+            <p>핀터레스트2</p>
+        </a>
+        <a href="UIUX 평가/index.html">
+            <h3>평가</h3>
+            <p>UI/UX 평가</p>
+        </a>
+        <a href="card/card01.html">
+            <h3>카드</h3>
+            <p>반짝반짝 테두리 회전</p>
+        </a>
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>

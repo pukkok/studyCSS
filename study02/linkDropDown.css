@@ -4,9 +4,9 @@ a{
 }
 
 .dropdown-menu{
-    width: 20rem;
+    width: 10rem;
+    padding: 10px 5px;
     background-color: #eee;
-    padding: .5rem;
     z-index: 1;
     box-shadow: .3rem .3rem .3rem rgba(0,0,0,.3);
     display: none;
@@ -14,6 +14,7 @@ a{
 .nav-menu:focus + .dropdown-menu{
     display: block;
 }
+
 .dropdown-menu a{
     display: block;
     transform: .3s;

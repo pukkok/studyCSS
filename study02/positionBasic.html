@@ -6,27 +6,26 @@
         <title>position basic</title>
         <style>
             body {
-                width: 200vw;
-                height: 300vh;
+                width: 150vw;
+                height: 200vh;
             }
 
             .container {
-                background-color: #ccc;
+                background-color: #2d2d2d;
+                color: azure;
                 width: 800px;
-                height: 600px;
+                height: 800px;
                 position: relative;
                 margin: 0 auto;
             }
 
-            .container .static,
-            .container .relative, 
-            .container .absolute,
-            .container .fix,
-            .container .sticky {
+            .container .box {
                 width: 150px;
                 height: 150px;
                 font-size: 2rem;
-                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .container .text-box{
@@ -37,26 +36,19 @@
 
             .container .static {
                 background-color: yellowgreen;
-                z-index: 2;
                 position: static;
-                top: 50%;
-                left: 50%;
-                /* transform: translate(-50%, -50%); */
             }
             .container .relative {
                 background-color: skyblue;
                 position: relative;
                 left: 50%;
                 top: 50%;
-                /* transform: translate(-50%, -50%); */
-                z-index: 3;
             }
             .container .absolute {
                 background-color: pink;
                 position: absolute;
                 left: 50%;
                 top: 50%;
-                transform: translate(-50%, -50%);
             }
 
             .container .fix {
@@ -84,12 +76,13 @@
                 <p>absolute : 부모 기준 꼭지점에서 x, y 점 출발</p>
                 <p>sticky : 부모 컨테이너 안에서 현재 보이는 화면 기준으로 x, y 고정</p>
                 <p>fix : 화면에 고정</p>
+                <p>transform : translate(-50%, -50%) 좌표점을 중앙으로 변경</p>
             </div>
-            <div class="static">static</div>
-            <div class="relative">relative</div>
-            <div class="absolute">absolute</div>
-            <div class="fix">fix</div>
-            <div class="sticky">sticky</div>
+            <div class="static box">static</div>
+            <div class="relative box">relative</div>
+            <div class="absolute box">absolute</div>
+            <div class="fix box">fix</div>
+            <div class="sticky box">sticky</div>
         </div>
     </body>
 </html>

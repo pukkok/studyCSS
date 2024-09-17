@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="file01.css">
+</head>
+<body>
+    <button>sent</button>
+    <button class="button">send
+        <span class="left-wing"></span>
+        <span class="left-body"></span>
+        <span class="right-wing"></span>
+        <span class="right-body"></span>
+    </button>
+    <script>
+        const send = document.querySelector('.button')
+        send.addEventListener('click', () => {
+            if(send.classList.length === 1){
+                send.classList.add('first')
+            }
+        })
+    </script>
+</body>
+</html>
